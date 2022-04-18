@@ -13,21 +13,21 @@ public class PostController {
         return "Here is my first post";
     }
 
-    @RequestMapping(path = "/posts/{id}", method = RequestMethod.GET) //
+    @RequestMapping(path = "/posts/{id}", method = RequestMethod.GET)
     @ResponseBody
     public String id(@PathVariable String id) {
 
         return id;
     }
 
-    @RequestMapping(path = "/posts/create", method = RequestMethod.GET) //
+    @RequestMapping(path = "/posts/create", method = RequestMethod.GET)
     @ResponseBody
     public String createPost() {
 
         return "here";
     }
 
-    @PostMapping("/posts/create") //
+    @PostMapping("/posts/create")
     @ResponseBody
     public String blogPosts() {
 
