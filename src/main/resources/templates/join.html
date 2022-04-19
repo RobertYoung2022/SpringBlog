@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Join</title>
+</head>
+<body>
+    <h1 th:text="${cohort}"></h1> <!-- step 4: displaying the POST method input -->
+
+    <form action="/join" method="POST"> <!-- step 2: connects to the showJoinForm  -->
+        <input type="text" name="cohort" id="cohort-ip" class="field"/>
+        <!-- using the name from this input field to get the input then the post request with receive it then post it the page. -->
+        <button>Join now</button>
+    </form>
+</body>
+</html>
