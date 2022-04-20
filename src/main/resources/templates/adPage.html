@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--single : name of collections-->
+    <div th:each="ad : ${ad}">
+        <h4 th:text="${ad.title}"></h4>
+        <p th:text="${ad.description}"></p>
+    </div>
+</body>
+</html>
