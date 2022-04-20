@@ -8,29 +8,31 @@ import org.springframework.web.bind.annotation.*;
 public class MathController {
     @RequestMapping(path = "/add/{numOne}/and/{numTwo}", method = RequestMethod.GET) //
     @ResponseBody
-    public Integer addNum(@PathVariable int numOne, @PathVariable int numTwo) {
+    // ADDITION METHOD
+    public String addNum(@PathVariable int numOne, @PathVariable int numTwo) {
 
-        return numOne + numTwo;
+        return "Here is the total of " + numOne + " + " + numTwo + " = " + (numOne + numTwo);
     }
-
+    // SUBTRACTION METHOD
     @RequestMapping(path = "/subtract/{numOne}/from/{numTwo}", method = RequestMethod.GET) //
     @ResponseBody
-    public Integer subNum(@PathVariable int numOne, @PathVariable int numTwo) {
+    public String subNum(@PathVariable int numOne, @PathVariable int numTwo) {
 
-        return numOne - numTwo;
+        return "Here is the total of " + numOne + " - " + numTwo + " = " + (numOne - numTwo);
     }
 
+    // MULTIPLY METHOD
     @RequestMapping(path = "/multiply/{numOne}/and/{numTwo}", method = RequestMethod.GET) //
     @ResponseBody
-    public Integer multipleNum(@PathVariable int numOne, @PathVariable int numTwo) {
+    public String multipleNum(@PathVariable int numOne, @PathVariable int numTwo) {
 
-        return numOne * numTwo;
+        return "Here is the total of " + numOne + " * " + numTwo + " = " + (numOne * numTwo);
     }
-
+    // DIVISION METHOD
     @RequestMapping(path = "divide/{numOne}/by/{numTwo}", method = RequestMethod.GET) //
     @ResponseBody
-    public Integer divideNum(@PathVariable int numOne, @PathVariable int numTwo) {
+    public String divideNum(@PathVariable int numOne, @PathVariable int numTwo) {
 
-        return numOne / numTwo;
+        return "Here is the total of " + numOne + " / " + numTwo + " = " + ((double)numOne / (double)numTwo);
     }
 }
