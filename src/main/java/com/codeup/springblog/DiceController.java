@@ -1,18 +1,39 @@
 package com.codeup.springblog;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class DiceController {
-//    @GetMapping("/dice/${}")
-//    public String rollDice(){
-//        int total = 0;
-//        int randomNumber = 0;
-//
-//        return "dice";
-//    }
+
+    // VIEW THE MAIN PAGE FOR DICE
+    @GetMapping("/roll-dice/")
+    public String rollDice(){
+            return "dice";
+    }
+
+    // VIEW THE PAGE FOR THE DICE ROLLED
+    @GetMapping("/roll-dice/{number}")
+    public String diceRolled(@PathVariable int number, Model model) {
+
+        int randomNum = (int)Math.floor(Math.random()* (6 - 1 + 1) + 1); // var to create random number sequence(s)
+
+        String message = "";
+
+        // if the random number(created my randomNum var) is the same as the number (selected by user)
+        if(randomNum == number) {
+            message = "Lucky Roll! You are CORRECT!";
+        } else {
+            message = "TRY AGAIN ;)";
+        }
+
+//        System.out.println("What did we get? RandomNum = " + randomNum + "; userNumber = " + number); // this was a check to see if the options are working in the dice.html view
+
+        model.addAttribute("number", number);
+        model.addAttribute("message", message);
+        model.addAttribute("randomNum", randomNum);
+
+        return "dice";
+    }
 }
