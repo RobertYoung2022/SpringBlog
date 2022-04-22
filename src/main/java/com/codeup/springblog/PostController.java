@@ -13,24 +13,24 @@ public class PostController {
         return "Here is my first post";
     }
 
-    @RequestMapping(path = "/posts/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/posts/{id}")
     @ResponseBody
-    public String id(@PathVariable String id) {
+    public String id(@PathVariable Long id) {
 
-        return id;
+        return "Future page to show off id: " + id;
     }
-
+    // EXAMPLE OF FUTURE GET-POST REQUEST
     @RequestMapping(path = "/posts/create", method = RequestMethod.GET)
     @ResponseBody
     public String createPost() {
 
-        return "here";
+        return "Form for creating a post - pardon our dust!"; // THIS WILL BE WHERE FORM WILL BE INSERTED
     }
 
     @PostMapping("/posts/create")
     @ResponseBody
-    public String blogPosts() {
+    public String submitPost() {
 
-        return "";
+        return "create a new post";
     }
 }

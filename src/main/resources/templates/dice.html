@@ -7,5 +7,28 @@
 <body>
 <nav th:include="nav :: navbar"></nav>
 
+<h1>Bobby's Dice Roller</h1>
+
+<a href="/roll-dice/1">Roll 1</a>
+<br>
+<a href="/roll-dice/2">Roll 2</a>
+<br>
+<a href="/roll-dice/3">Roll 3</a>
+<br>
+<a href="/roll-dice/4">Roll 4</a>
+<br>
+<a href="/roll-dice/5">Roll 5</a>
+<br>
+<a href="/roll-dice/6">Roll 6</a>
+<br>
+
+<div th:if="${number != null}">
+    <p>You guessed: <span th:text="${number}"></span> and the dice rolled a <span th:text="${randomNum}"></span>.
+    </p>
+
+    <p th:text="${message}"></p>
+</div>
+
+
 </body>
 </html>
